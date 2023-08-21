@@ -12,13 +12,19 @@ class Affiche_Database(tk.Toplevel):
     
     def affiche_db(self):
         """requete sql pour afficher le contenu de la database"""
-        conn = sqlite3.connect('produits.db')
-        cur = conn.cursor()
-        cur.execute("SELECT * FROM membres")
-        variable=cur.fetchall()
-        return(str(variable))
+        try :
+            conn = sqlite3.connect('produits.db')
+            cur = conn.cursor()
+            cur.execute("SELECT * FROM membres")
+            variable=cur.fetchall()
+            return(str(variable))
+        
+        except sqlite3.OperationalError :
+            pass    
+            
 
     def afficher_text(self):
         """insert le contenu de la database dans la fenetre scrollable"""
         texte = self.affiche_db()
         self.text_area.insert(tk.END, texte)
+

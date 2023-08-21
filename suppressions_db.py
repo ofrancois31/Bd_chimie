@@ -11,7 +11,7 @@ class Suppression(tk.Toplevel):
         self.affiche=tk.Label(self)
         self.supp = tk.Button(self, text='supprimer', command=self.supprime)
         self.supp.pack()
-        self.exit = tk.Button(self, text='exit', command=self.destroy)
+        self.exit = tk.Button(self, text='quitter', command=self.destroy)
         self.exit.pack()
         self.title("Suppression")
         

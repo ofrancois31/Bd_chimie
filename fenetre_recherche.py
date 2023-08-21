@@ -9,7 +9,7 @@ class Recherche_Fenetre(tk.Toplevel):
         self.saisie = tk.Entry(self,textvariable=self.textvar)
         self.saisie.insert(0,"Entrez ici votre texte")
         self.saisie.pack()
-        self.button = tk.Button(self, text="Exit",command=self.destroy)
+        self.button = tk.Button(self, text="Quitter",command=self.destroy)
         self.affiche = tk.Label(self, text="Affichage", justify="left")
         self.affiche.pack()
         self.button.pack(pady=5, ipadx=2, ipady=2) 
